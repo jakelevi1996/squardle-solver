@@ -19,9 +19,11 @@ class DownloadableFile:
     def download(self):
         url = self.get_url()
         full_path = self.get_path()
+        dir_name  = os.path.dirname(full_path)
         print("Downloading \"%s\" to \"%s\"" % (url, full_path))
-        if not os.path.isdir(os.path.dirname(full_path)):
-            os.makedirs(os.path.dirname(full_path))
+
+        if not os.path.isdir(dir_name):
+            os.makedirs(dir_name)
         with util.Timer("download"):
             urllib.request.urlretrieve(url, full_path)
 

@@ -1,4 +1,5 @@
 from squardle_solver.node import Node
+from squardle_solver.word_tree import WordTree
 
 class Grid:
     def __init__(self, rows: list[str]):
@@ -31,3 +32,25 @@ class Grid:
                 c = row[x]
                 if c.isalpha():
                     return c
+
+    def find_neighbour(
+        self,
+        node: Node,
+        subtree: WordTree,
+        history: list[Node],
+    ):
+        for neighbour in node.edges:
+            if neighbour not in history:
+                if (neighbour.c in subtree.leaf_str) and (len(history) > 3):
+                    path = history + [neighbour]
+                    print("".join(n.c for n in path))
+                if neighbour.c in subtree.subtree_dict:
+                    self.find_neighbour(
+                        neighbour,
+                        subtree.subtree_dict[neighbour.c],
+                        history + [neighbour],
+                    )
+
+    def solve(self, word_tree: WordTree):
+        for node in self.nodes.values():
+            self.find_neighbour(node, word_tree, [])

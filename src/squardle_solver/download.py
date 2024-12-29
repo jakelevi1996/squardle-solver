@@ -19,7 +19,7 @@ class DownloadableFile:
     def download(self):
         url = self.get_url()
         full_path = self.get_path()
-        print("Downloading \"%s\" from \"%s\"" % (full_path, url))
+        print("Downloading \"%s\" to \"%s\"" % (url, full_path))
         if not os.path.isdir(os.path.dirname(full_path)):
             os.makedirs(os.path.dirname(full_path))
         with util.Timer("download"):
@@ -27,6 +27,7 @@ class DownloadableFile:
 
 class WordsAlpha(DownloadableFile):
     def load(self):
+        print("Loading from \"%s\"" % self.get_path())
         return util.load_text(self.get_path()).strip().split("\n")
 
     def get_path(self):

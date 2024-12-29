@@ -16,7 +16,6 @@ class WordTree:
         self.subtree_dict = {k: WordTree(v) for k, v in prefix_dict.items()}
         self.leaf_str = "".join(leaf_list)
 
-
 class WordTreeCache(PickleCache):
     def __init__(self, word_list: list[str]):
         self.word_list = word_list

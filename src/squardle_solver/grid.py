@@ -52,5 +52,9 @@ class Grid:
                     )
 
     def solve(self, word_tree: WordTree):
-        for node in self.nodes.values():
-            self.find_neighbours(node, word_tree, [])
+        for node in sorted(self.nodes.values()):
+            self.find_neighbours(
+                node,
+                word_tree.subtree_dict[node.c],
+                [node],
+            )

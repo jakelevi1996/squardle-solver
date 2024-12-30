@@ -26,7 +26,7 @@ t - a - e
 y l n o s
 ```
 
-- The following command finds solutions to this board (including 8-letter solutions "appeared" and "sopranos", all in less than 1.2 seconds) and saves them in [`data/solutions.txt`](data/solutions.txt):
+- The following command finds solutions to this board (including 8-letter solutions "appeared" and "sopranos", all in less than 1.2 seconds) and saves them in `data/solutions.txt`:
 
 ```
 python scripts/solve.py --input_str sopav/l-p-i/foerd/t-a-e/ylnos

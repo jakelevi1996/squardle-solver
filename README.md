@@ -8,5 +8,6 @@ This package can be installed locally in "editable mode" with the following comm
 
 ```
 python -m pip install -U pip
+python -m pip install jutility
 python -m pip install -e .
 ```

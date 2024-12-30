@@ -47,10 +47,12 @@ class Grid:
                 if is_word and ((len(history) + 1) >= min_len):
                     path = history + [neighbour]
                     solutions.append("".join(n.c for n in path))
-                if neighbour.c in subtree.subtree_dict:
+
+                neighbour_subtree = subtree.subtree_dict.get(neighbour.c)
+                if neighbour_subtree is not None:
                     self.find_neighbours(
                         neighbour,
-                        subtree.subtree_dict[neighbour.c],
+                        neighbour_subtree,
                         history + [neighbour],
                         solutions,
                         min_len,

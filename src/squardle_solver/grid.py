@@ -33,7 +33,7 @@ class Grid:
                 if c.isalpha():
                     return c
 
-    def find_neighbour(
+    def find_neighbours(
         self,
         node: Node,
         subtree: WordTree,
@@ -45,7 +45,7 @@ class Grid:
                     path = history + [neighbour]
                     print("".join(n.c for n in path))
                 if neighbour.c in subtree.subtree_dict:
-                    self.find_neighbour(
+                    self.find_neighbours(
                         neighbour,
                         subtree.subtree_dict[neighbour.c],
                         history + [neighbour],
@@ -53,4 +53,4 @@ class Grid:
 
     def solve(self, word_tree: WordTree):
         for node in self.nodes.values():
-            self.find_neighbour(node, word_tree, [])
+            self.find_neighbours(node, word_tree, [])

@@ -41,7 +41,7 @@ t e n u
 i c o h
 ```
 
-- These solutions can be found with the following command
+- These solutions can be found with the following command:
 
 ```
 python scripts/solve.py --input_str ared/etfe/tenu/icoh

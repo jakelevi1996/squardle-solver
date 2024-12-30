@@ -26,10 +26,25 @@ t - a - e
 y l n o s
 ```
 
-- The following command finds solutions to this board (including "appeared" and "sopranos", all in less than 1.2 seconds) and saves them in [`data/solutions.txt`](data/solutions.txt):
+- The following command finds solutions to this board (including 8-letter solutions "appeared" and "sopranos", all in less than 1.2 seconds) and saves them in [`data/solutions.txt`](data/solutions.txt):
 
 ```
 python scripts/solve.py --input_str sopav/l-p-i/foerd/t-a-e/ylnos
+```
+
+- The script also finds 11-letter solutions "confederate" and "counterfeit" to the following board in less than 1.2 seconds:
+
+```
+a r e d
+e t f e
+t e n u
+i c o h
+```
+
+- These solutions can be found with the following command
+
+```
+python scripts/solve.py --input_str ared/etfe/tenu/icoh
 ```
 
 - To display command line options, use the `-h` flag:

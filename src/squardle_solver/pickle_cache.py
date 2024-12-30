@@ -13,12 +13,14 @@ class PickleCache:
                 data = self.make()
             if not os.path.isdir(dir_name):
                 os.makedirs(dir_name)
-            with open(full_path, "wb") as f:
-                pickle.dump(data, f)
-
-            return data
+            with util.Timer("save"):
+                with open(full_path, "wb") as f:
+                    pickle.dump(data, f)
         else:
-            return util.load_pickle(full_path)
+            with util.Timer("load"):
+                data = util.load_pickle(full_path)
+
+        return data
 
     def make(self):
         raise NotImplementedError()

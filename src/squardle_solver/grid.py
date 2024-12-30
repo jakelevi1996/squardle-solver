@@ -38,10 +38,12 @@ class Grid:
         node: Node,
         subtree: WordTree,
         history: list[Node],
+        min_len: int,
     ):
         for neighbour in node.edges:
             if neighbour not in history:
-                if (neighbour.c in subtree.leaf_str) and (len(history) > 3):
+                is_word = (neighbour.c in subtree.leaf_str)
+                if is_word and ((len(history) + 1) >= min_len):
                     path = history + [neighbour]
                     print("".join(n.c for n in path))
                 if neighbour.c in subtree.subtree_dict:
@@ -49,12 +51,14 @@ class Grid:
                         neighbour,
                         subtree.subtree_dict[neighbour.c],
                         history + [neighbour],
+                        min_len,
                     )
 
-    def solve(self, word_tree: WordTree):
+    def solve(self, word_tree: WordTree, min_len: int):
         for node in sorted(self.nodes.values()):
             self.find_neighbours(
                 node,
                 word_tree.subtree_dict[node.c],
                 [node],
+                min_len,
             )

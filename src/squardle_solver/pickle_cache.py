@@ -9,15 +9,15 @@ class PickleCache:
         print("Loading from \"%s\"" % full_path)
 
         if not os.path.isfile(full_path):
-            with util.Timer("make"):
+            with util.Timer("PickleCache.make"):
                 data = self.make()
             if not os.path.isdir(dir_name):
                 os.makedirs(dir_name)
-            with util.Timer("save"):
+            with util.Timer("PickleCache.save"):
                 with open(full_path, "wb") as f:
                     pickle.dump(data, f)
         else:
-            with util.Timer("load"):
+            with util.Timer("PickleCache.load"):
                 data = util.load_pickle(full_path)
 
         return data

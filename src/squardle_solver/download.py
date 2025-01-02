@@ -25,7 +25,7 @@ class DownloadableFile:
 
         if not os.path.isdir(dir_name):
             os.makedirs(dir_name)
-        with util.Timer("download"):
+        with util.Timer("DownloadableFile.download"):
             urllib.request.urlretrieve(url, full_path)
 
 class WordsAlpha(DownloadableFile):

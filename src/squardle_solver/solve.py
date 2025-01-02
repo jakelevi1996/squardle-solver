@@ -10,18 +10,17 @@ def main(
     min_len: int,
 ):
     rows = input_str.lower().split(line_sep)
-
     grid = squardle_solver.grid.Grid(rows)
     word_list = squardle_solver.download.WordsAlpha()
     word_tree = squardle_solver.word_tree.WordTreeCache(word_list).load()
+
+    with util.Timer("solve"):
+        solutions = grid.solve(word_tree, min_len)
 
     printer = util.Printer(output_name, output_dir, print_to_console=False)
     printer.hline()
     printer("\n".join(" ".join(row) for row in rows))
     printer.hline()
-
-    with util.Timer("solve"):
-        solutions = grid.solve(word_tree, min_len)
 
     length_set = set(len(s) for s in solutions)
     for n in sorted(length_set):

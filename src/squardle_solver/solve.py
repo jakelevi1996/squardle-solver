@@ -17,7 +17,7 @@ def main(
     printer.hline()
 
     grid = squardle_solver.grid.Grid(rows)
-    word_list = squardle_solver.download.WordsAlpha().load()
+    word_list = squardle_solver.download.WordsAlpha()
     word_tree = squardle_solver.word_tree.WordTreeCache(word_list).load()
 
     with util.Timer("solve"):

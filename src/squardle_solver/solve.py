@@ -32,7 +32,7 @@ def main(
         )
         printer.hline()
 
-if __name__ == "__main__":
+def main_cli():
     parser = cli.ObjectParser(
         cli.Arg("input_str",    type=str, default="ared/etfe/tenu/icoh"),
         cli.Arg("line_sep",     type=str, default="/"),

@@ -11,9 +11,10 @@ def main(
 ):
     rows = input_str.split(line_sep)
 
-    util.hline()
-    print("\n".join(" ".join(row) for row in rows))
-    util.hline()
+    printer = util.Printer(output_name, output_dir, print_to_console=False)
+    printer.hline()
+    printer("\n".join(" ".join(row) for row in rows))
+    printer.hline()
 
     grid = squardle_solver.grid.Grid(rows)
     word_list = squardle_solver.download.WordsAlpha().load()
@@ -22,7 +23,6 @@ def main(
     with util.Timer("solve"):
         solutions = grid.solve(word_tree, min_len)
 
-    printer = util.Printer(output_name, output_dir, print_to_console=False)
     length_set = set(len(s) for s in solutions)
     for n in sorted(length_set):
         length_n_words = sorted(set(s for s in solutions if (len(s) == n)))

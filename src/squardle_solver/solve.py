@@ -36,11 +36,10 @@ def main(
 
 def main_cli():
     parser = cli.ObjectParser(
-        cli.Arg(
+        cli.PositionalArg(
             "input_str",
             type=str,
             default="ared/etfe/tenu/icoh",
-            positional=True,
             nargs="?",
         ),
         cli.Arg("line_sep",     type=str, default="/"),

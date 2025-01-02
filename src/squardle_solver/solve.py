@@ -9,7 +9,7 @@ def main(
     output_dir: str,
     min_len: int,
 ):
-    rows = input_str.split(line_sep)
+    rows = input_str.lower().split(line_sep)
 
     grid = squardle_solver.grid.Grid(rows)
     word_list = squardle_solver.download.WordsAlpha()

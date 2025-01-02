@@ -7,4 +7,4 @@ name = "squardle_solver"
 version = "0.0.1"
 
 [project.scripts]
-solve-squardle = "squardle_solver.solve:main_cli"
+squardle-solve = "squardle_solver.solve:main_cli"

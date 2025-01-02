@@ -19,6 +19,8 @@ def main(
 
     printer = util.Printer(output_name, output_dir, print_to_console=False)
     printer.hline()
+    printer(input_str)
+    printer.hline()
     printer("\n".join(" ".join(row) for row in rows))
     printer.hline()
 
@@ -52,4 +54,4 @@ def main_cli():
     )
 
     with util.Timer("main"):
-        main(**kwargs)
+        main(**args.get_kwargs())

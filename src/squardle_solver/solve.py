@@ -1,5 +1,6 @@
 from jutility import util, cli
 import squardle_solver
+from squardle_solver import full_path
 
 def main(
     input_str: str,
@@ -37,7 +38,7 @@ def main_cli():
         cli.Arg("input_str",    type=str, default="ared/etfe/tenu/icoh"),
         cli.Arg("line_sep",     type=str, default="/"),
         cli.Arg("output_name",  type=str, default="solutions"),
-        cli.Arg("output_dir",   type=str, default="data"),
+        cli.Arg("output_dir",   type=str, default=full_path.get_data_dir()),
         cli.Arg("min_len",      type=int, default=4),
     )
     args = parser.parse_args()

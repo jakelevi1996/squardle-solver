@@ -1,3 +1,4 @@
+from squardle_solver import full_path
 from squardle_solver.pickle_cache import PickleCache
 
 class WordTree:
@@ -24,4 +25,4 @@ class WordTreeCache(PickleCache):
         return WordTree(self.word_list)
 
     def get_path(self) -> str:
-        return "data/word_tree.pkl"
+        return full_path.get("word_tree.pkl")

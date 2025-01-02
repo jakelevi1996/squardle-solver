@@ -1,6 +1,7 @@
 import os
 import urllib.request
 from jutility import util
+from squardle_solver import full_path
 
 class DownloadableFile:
     def __init__(self):
@@ -33,7 +34,7 @@ class WordsAlpha(DownloadableFile):
         return util.load_text(self.get_path()).strip().split("\n")
 
     def get_path(self):
-        return "data/words_alpha.txt"
+        return full_path.get("words_alpha.txt")
 
     def get_url(self):
         return (

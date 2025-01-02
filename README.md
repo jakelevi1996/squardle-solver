@@ -14,7 +14,7 @@ python -m pip install -e .
 
 ## Usage examples
 
-- The input board is provided to `scripts/solve.py` using the `--input_str` argument
+- The input board is provided to `squardle-solve` using the `--input_str` argument
 - To convert an input board into a string, replace all new-lines with `"/"`, replace all blank tiles with `"-"`, and remove all whitespace
 - For example, the string `"sopav/l-p-i/foerd/t-a-e/ylnos"` represents the following board:
 
@@ -29,10 +29,10 @@ y l n o s
 - The following command finds solutions to this board (including 8-letter solutions "appeared" and "sopranos", all in less than 1.2 seconds) and saves them in `data/solutions.txt` (an example of which can be found [here](data/solutions_example.txt)):
 
 ```
-python scripts/solve.py --input_str sopav/l-p-i/foerd/t-a-e/ylnos
+squardle-solve --input_str sopav/l-p-i/foerd/t-a-e/ylnos
 ```
 
-- The script also finds 11-letter solutions "confederate" and "counterfeit" to the following board in less than 1.2 seconds:
+- The program also finds 11-letter solutions "confederate" and "counterfeit" to the following board in less than 1.2 seconds:
 
 ```
 a r e d
@@ -44,11 +44,11 @@ i c o h
 - These solutions can be found with the following command:
 
 ```
-python scripts/solve.py --input_str ared/etfe/tenu/icoh
+squardle-solve --input_str ared/etfe/tenu/icoh
 ```
 
 - To display command line options, use the `-h` flag:
 
 ```
-python scripts/solve.py -h
+squardle-solve -h
 ```

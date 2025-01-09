@@ -26,4 +26,4 @@ class WordTreeCache(PickleCache):
         return WordTree(self.word_list.load())
 
     def get_path(self) -> str:
-        return full_path.get("word_tree.pkl")
+        return full_path.get("word_tree_%s.pkl" % self.word_list)

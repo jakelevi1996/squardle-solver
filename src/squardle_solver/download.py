@@ -28,6 +28,9 @@ class DownloadableFile:
         with util.Timer("DownloadableFile.download"):
             urllib.request.urlretrieve(url, full_path)
 
+    def __repr__(self):
+        return type(self).__name__
+
 class WordsAlpha(DownloadableFile):
     def load(self):
         print("Loading from \"%s\"" % self.get_path())

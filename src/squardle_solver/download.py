@@ -62,3 +62,15 @@ class Nwl2020(DownloadableFile):
             "https://raw.githubusercontent.com/scrabblewords/scrabblewords/"
             "main/words/North-American/NWL2020.txt"
         )
+
+class NorvigNgrams(DownloadableFile):
+    def load(self):
+        return util.load_text(self.get_path()).strip().split("\n")
+
+    def get_path(self):
+        return full_path.get("norvig_ngrams.txt")
+
+    def get_url(self):
+        return (
+            "https://norvig.com/ngrams/enable1.txt"
+        )

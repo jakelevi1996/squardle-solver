@@ -55,6 +55,7 @@ def main_cli():
             "word_list",
             cli.ObjectArg(download.WordsAlpha),
             cli.ObjectArg(download.Nwl2020),
+            cli.ObjectArg(download.NorvigNgrams),
             default="Nwl2020",
         ),
     )

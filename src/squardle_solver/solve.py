@@ -1,8 +1,9 @@
 from jutility import util, cli
 import squardle_solver
-from squardle_solver import full_path
+from squardle_solver import full_path, download
 
 def main(
+    args: cli.ParsedArgs,
     input_str: str,
     line_sep: str,
     output_name: str,
@@ -11,7 +12,11 @@ def main(
 ):
     rows = input_str.lower().split(line_sep)
     grid = squardle_solver.grid.Grid(rows)
-    word_list = squardle_solver.download.WordsAlpha()
+
+    with cli.verbose:
+        word_list = cli.init_object(args, "word_list")
+        assert isinstance(word_list, download.DownloadableFile)
+
     word_tree = squardle_solver.word_tree.WordTreeCache(word_list).load()
 
     with util.Timer("solve"):
@@ -46,6 +51,12 @@ def main_cli():
         cli.Arg("output_name",  type=str, default="solutions"),
         cli.Arg("output_dir",   type=str, default=full_path.get_data_dir()),
         cli.Arg("min_len",      type=int, default=4),
+        cli.ObjectChoice(
+            "word_list",
+            cli.ObjectArg(download.WordsAlpha),
+            cli.ObjectArg(download.Nwl2020),
+            default="Nwl2020",
+        ),
     )
     args = parser.parse_args()
     kwargs = args.get_kwargs(
@@ -53,4 +64,4 @@ def main_cli():
     )
 
     with util.Timer("main"):
-        main(**args.get_kwargs())
+        main(args, **args.get_kwargs())

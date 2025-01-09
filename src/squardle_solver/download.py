@@ -28,12 +28,14 @@ class DownloadableFile:
         with util.Timer("DownloadableFile.download"):
             urllib.request.urlretrieve(url, full_path)
 
+    def display_load(self):
+        print("Loading from \"%s\"" % self.get_path())
+
     def __repr__(self):
         return type(self).__name__
 
 class WordsAlpha(DownloadableFile):
     def load(self):
-        print("Loading from \"%s\"" % self.get_path())
         return util.load_text(self.get_path()).strip().split("\n")
 
     def get_path(self):
@@ -43,4 +45,20 @@ class WordsAlpha(DownloadableFile):
         return (
             "https://raw.githubusercontent.com/dwyl/english-words/master/"
             "words_alpha.txt"
+        )
+
+class Nwl2020(DownloadableFile):
+    def load(self):
+        return [
+            s.split(" ")[0].lower()
+            for s in util.load_text(self.get_path()).strip().split("\n")
+        ]
+
+    def get_path(self):
+        return full_path.get("NWL2020.txt")
+
+    def get_url(self):
+        return (
+            "https://raw.githubusercontent.com/scrabblewords/scrabblewords/"
+            "main/words/North-American/NWL2020.txt"
         )

@@ -23,6 +23,7 @@ class WordTreeCache(PickleCache):
         self.word_list = word_list
 
     def make(self):
+        self.word_list.display_load()
         return WordTree(self.word_list.load())
 
     def get_path(self) -> str:

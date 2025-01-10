@@ -29,6 +29,8 @@ def main(
     printer.hline()
     printer("\n".join(" ".join(row) for row in rows))
     printer.hline()
+    printer("%i TOTAL SOLUTIONS" % len(set(solutions)))
+    printer.hline()
 
     length_set = set(len(s) for s in solutions)
     for n in sorted(length_set):

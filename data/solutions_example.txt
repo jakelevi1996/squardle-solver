@@ -1,153 +1,128 @@
+----------------------------------------------------------------------------------------------------
+sopav/l-p-i/foerd/t-a-e/ylnos
+----------------------------------------------------------------------------------------------------
+s o p a v
+l - p - i
+f o e r d
+t - a - e
+y l n o s
+----------------------------------------------------------------------------------------------------
+110 TOTAL SOLUTIONS
+----------------------------------------------------------------------------------------------------
 4-LETTER SOLUTIONS:
 ( 1) aide
-( 2) aira
-( 3) aire
-( 4) alto
-( 5) aper
-( 6) ared
-( 7) ares
-( 8) aria
-( 9) arid
-(10) avid
-(11) dere
-(12) dire
-(13) diva
-(14) eoan
-(15) epop
-(16) epos
-(17) eral
-(18) eria
-(19) floe
-(20) flop
-(21) flot
-(22) foal
-(23) ideo
-(24) ides
-(25) iran
-(26) ired
-(27) ires
-(28) irpe
-(29) laos
-(30) lard
-(31) lare
-(32) lari
-(33) loan
-(34) loft
-(35) lope
-(36) naos
-(37) nard
-(38) nare
-(39) noes
-(40) nose
-(41) olof
-(42) only
-(43) opai
-(44) oslo
-(45) paid
-(46) pair
-(47) pape
-(48) peal
-(49) pean
-(50) pear
-(51) pere
-(52) peri
-(53) polo
-(54) pols
-(55) pope
-(56) prao
-(57) pred
-(58) pres
-(59) pria
-(60) priv
-(61) real
-(62) repp
-(63) ride
-(64) riva
-(65) sera
-(66) sere
-(67) seri
-(68) sloe
-(69) slop
-(70) slot
-(71) soar
-(72) solo
-(73) sope
-(74) toea
-(75) tope
-(76) topo
-(77) vair
-(78) vide
-(79) vira
-(80) vire
+( 2) alto
+( 3) aper
+( 4) apos
+( 5) ares
+( 6) aria
+( 7) arid
+( 8) avid
+( 9) dere
+(10) dire
+(11) diva
+(12) epos
+(13) floe
+(14) flop
+(15) foal
+(16) ides
+(17) ired
+(18) ires
+(19) lard
+(20) lari
+(21) loan
+(22) loft
+(23) lope
+(24) naos
+(25) nard
+(26) noes
+(27) nose
+(28) only
+(29) paid
+(30) pair
+(31) peal
+(32) pean
+(33) pear
+(34) pere
+(35) peri
+(36) polo
+(37) pols
+(38) pope
+(39) prao
+(40) real
+(41) repo
+(42) repp
+(43) ride
+(44) sera
+(45) sere
+(46) sloe
+(47) slop
+(48) slot
+(49) soar
+(50) solo
+(51) toea
+(52) tope
+(53) topo
+(54) vair
+(55) vape
+(56) vide
 ----------------------------------------------------------------------------------------------------
 5-LETTER SOLUTIONS:
 ( 1) aider
 ( 2) aides
-( 3) airan
-( 4) aired
-( 5) apres
-( 6) deriv
-( 7) eared
-( 8) foaly
-( 9) ireos
-(10) lares
-(11) laria
-(12) larid
-(13) lofty
-(14) loper
-(15) nares
-(16) nosed
-(17) noser
-(18) oared
-(19) oftly
-(20) opera
-(21) paper
-(22) pavid
-(23) peres
-(24) polos
-(25) praos
-(26) pride
-(27) redia
-(28) repot
-(29) rides
-(30) seral
-(31) sloan
-(32) slope
-(33) sonar
-(34) sonly
-(35) toper
-(36) topos
-(37) vaire
-(38) video
-(39) viral
-(40) vireo
-(41) vires
+( 3) aired
+( 4) apres
+( 5) arepa
+( 6) eared
+( 7) lares
+( 8) lofty
+( 9) loper
+(10) nares
+(11) nosed
+(12) oared
+(13) opera
+(14) paper
+(15) pavid
+(16) peres
+(17) polos
+(18) praos
+(19) pride
+(20) redia
+(21) repos
+(22) repot
+(23) rides
+(24) seral
+(25) slope
+(26) sonar
+(27) sonly
+(28) toper
+(29) topos
+(30) vaper
+(31) video
+(32) viral
+(33) vireo
+(34) vires
 ----------------------------------------------------------------------------------------------------
 6-LETTER SOLUTIONS:
 ( 1) appeal
 ( 2) appear
-( 3) appere
-( 4) diaper
-( 5) lanose
-( 6) lopper
-( 7) paired
-( 8) popean
-( 9) prides
-(10) realty
-(11) repaid
-(12) serean
-(13) sloper
-(14) soared
-(15) sopper
-(16) tylari
-(17) videos
-(18) vireos
+( 3) diaper
+( 4) lanose
+( 5) lopper
+( 6) paired
+( 7) pereon
+( 8) prides
+( 9) realty
+(10) repaid
+(11) sloper
+(12) soared
+(13) videos
+(14) vireos
 ----------------------------------------------------------------------------------------------------
 7-LETTER SOLUTIONS:
-( 1) aerides
-( 2) flopper
-( 3) papered
-( 4) soprano
+( 1) flopper
+( 2) papered
+( 3) soprano
 ----------------------------------------------------------------------------------------------------
 8-LETTER SOLUTIONS:
 ( 1) appeared

@@ -33,7 +33,7 @@ def main(
     for n in sorted(length_set):
         length_n_words = sorted(set(s for s in solutions if (len(s) == n)))
         printer(
-            ("%i-letter solutions:" % n).upper(),
+            "%i-LETTER SOLUTIONS:" % n,
             *["(%2i) %s" % (i, w) for i, w in enumerate(length_n_words, 1)],
             sep="\n",
         )

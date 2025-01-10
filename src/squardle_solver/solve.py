@@ -19,6 +19,7 @@ def main(
 
     word_tree = squardle_solver.word_tree.WordTreeCache(word_list).load()
 
+    print("> Solving")
     with util.Timer("solve"):
         solutions = grid.solve(word_tree, min_len)
 

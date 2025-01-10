@@ -60,9 +60,6 @@ def main_cli():
         ),
     )
     args = parser.parse_args()
-    kwargs = args.get_kwargs(
-        "input_str, line_sep, output_name, output_dir, min_len",
-    )
 
     with util.Timer("main"):
         main(args, **args.get_kwargs())

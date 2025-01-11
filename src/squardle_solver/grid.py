@@ -31,7 +31,7 @@ class Grid:
             if x < len(row):
                 c = row[x]
                 if c.isalpha():
-                    return c
+                    return c.lower()
 
     def find_neighbours(
         self,

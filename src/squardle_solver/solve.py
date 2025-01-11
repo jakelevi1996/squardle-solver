@@ -4,13 +4,14 @@ from squardle_solver import full_path, download
 
 def main(
     args: cli.ParsedArgs,
-    input_str: str,
-    line_sep: str,
+    rows: list[str],
     output_name: str,
     output_dir: str,
     min_len: int,
 ):
-    rows = input_str.lower().split(line_sep)
+    if len(rows) == 0:
+        rows = ["ared", "etfe", "tenu", "icoh"]
+
     grid = squardle_solver.grid.Grid(rows)
 
     with cli.verbose:
@@ -25,7 +26,7 @@ def main(
 
     printer = util.Printer(output_name, output_dir, print_to_console=False)
     printer.hline()
-    printer(input_str)
+    printer("/".join(rows))
     printer.hline()
     printer("\n".join(" ".join(row) for row in rows))
     printer.hline()
@@ -44,13 +45,7 @@ def main(
 
 def main_cli():
     parser = cli.ObjectParser(
-        cli.PositionalArg(
-            "input_str",
-            type=str,
-            default="ared/etfe/tenu/icoh",
-            nargs="?",
-        ),
-        cli.Arg("line_sep",     type=str, default="/"),
+        cli.PositionalArg("rows", type=str, nargs="*"),
         cli.Arg("output_name",  type=str, default="solutions"),
         cli.Arg("output_dir",   type=str, default=full_path.get_data_dir()),
         cli.Arg("min_len",      type=int, default=4),

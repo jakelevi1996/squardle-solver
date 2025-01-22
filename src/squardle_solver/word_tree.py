@@ -18,6 +18,12 @@ class WordTree:
         self.subtree_dict = {k: WordTree(v) for k, v in prefix_dict.items()}
         self.leaf_str = "".join(leaf_list)
 
+    def is_leaf(self, c: str):
+        return c in self.leaf_str
+
+    def get_subtree(self, c: str):
+        return self.subtree_dict.get(c)
+
 class WordTreeCache(PickleCache):
     def __init__(self, word_list: DownloadableFile):
         self.word_list = word_list

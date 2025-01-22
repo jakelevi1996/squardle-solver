@@ -43,12 +43,12 @@ class Grid:
     ):
         for neighbour in node.edges:
             if neighbour not in history:
-                is_word = (neighbour.c in subtree.leaf_str)
+                is_word = subtree.is_leaf(neighbour.c)
                 if is_word and ((len(history) + 1) >= min_len):
                     path = history + [neighbour]
                     solutions.append("".join(n.c for n in path))
 
-                neighbour_subtree = subtree.subtree_dict.get(neighbour.c)
+                neighbour_subtree = subtree.get_subtree(neighbour.c)
                 if neighbour_subtree is not None:
                     self.find_neighbours(
                         neighbour,
@@ -63,7 +63,7 @@ class Grid:
         for node in sorted(self.nodes.values()):
             self.find_neighbours(
                 node,
-                word_tree.subtree_dict[node.c],
+                word_tree.get_subtree(node.c),
                 [node],
                 solutions,
                 min_len,

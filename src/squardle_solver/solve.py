@@ -53,8 +53,9 @@ def main_cli():
             "word_list",
             cli.ObjectArg(download.WordsAlpha),
             cli.ObjectArg(download.Nwl2020),
+            cli.ObjectArg(download.Nwl2023),
             cli.ObjectArg(download.NorvigNgrams),
-            default="Nwl2020",
+            default="Nwl2023",
         ),
     )
     args = parser.parse_args()

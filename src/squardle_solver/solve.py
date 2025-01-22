@@ -1,6 +1,6 @@
 from jutility import util, cli
 import squardle_solver
-from squardle_solver import full_path, download
+from squardle_solver import full_path
 
 def main(
     args: cli.ParsedArgs,
@@ -16,7 +16,7 @@ def main(
 
     with cli.verbose:
         word_list = cli.init_object(args, "word_list")
-        assert isinstance(word_list, download.DownloadableFile)
+        assert isinstance(word_list, squardle_solver.word_list.WordList)
 
     word_tree = squardle_solver.word_tree.WordTreeCache(word_list).load()
 
@@ -51,10 +51,10 @@ def main_cli():
         cli.Arg("min_len",      type=int, default=4),
         cli.ObjectChoice(
             "word_list",
-            cli.ObjectArg(download.WordsAlpha),
-            cli.ObjectArg(download.Nwl2020),
-            cli.ObjectArg(download.Nwl2023),
-            cli.ObjectArg(download.NorvigNgrams),
+            cli.ObjectArg(squardle_solver.word_list.WordsAlpha),
+            cli.ObjectArg(squardle_solver.word_list.Nwl2020),
+            cli.ObjectArg(squardle_solver.word_list.Nwl2023),
+            cli.ObjectArg(squardle_solver.word_list.NorvigNgrams),
             default="Nwl2023",
         ),
     )

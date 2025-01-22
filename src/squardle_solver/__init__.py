@@ -1,6 +1,6 @@
 from squardle_solver import (
     node,
     grid,
-    download,
+    word_list,
     word_tree,
 )

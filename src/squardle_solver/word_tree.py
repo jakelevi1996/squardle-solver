@@ -1,6 +1,6 @@
 from squardle_solver import full_path
 from squardle_solver.pickle_cache import PickleCache
-from squardle_solver.download import DownloadableFile
+from squardle_solver.word_list import WordList
 
 class WordTree:
     def __init__(self, word_list: list[str]):
@@ -25,7 +25,7 @@ class WordTree:
         return self.subtree_dict.get(c)
 
 class WordTreeCache(PickleCache):
-    def __init__(self, word_list: DownloadableFile):
+    def __init__(self, word_list: WordList):
         self.word_list = word_list
 
     def make(self):

@@ -5,9 +5,10 @@ from squardle_solver import full_path
 def main(
     args: cli.ParsedArgs,
     rows: list[str],
+    min_len: int,
     output_name: str,
     output_dir: str,
-    min_len: int,
+    print_to_console: bool,
 ):
     if len(rows) == 0:
         rows = ["ared", "etfe", "tenu", "icoh"]
@@ -24,7 +25,11 @@ def main(
     with util.Timer("solve"):
         solutions = grid.solve(word_tree, min_len)
 
-    printer = util.Printer(output_name, output_dir, print_to_console=False)
+    printer = util.Printer(
+        output_name,
+        output_dir,
+        print_to_console=print_to_console,
+    )
     printer.hline()
     printer("/".join(rows))
     printer.hline()
@@ -46,9 +51,15 @@ def main(
 def main_cli():
     parser = cli.ObjectParser(
         cli.PositionalArg("rows", type=str, nargs="*"),
+        cli.Arg("min_len",      type=int, default=4),
         cli.Arg("output_name",  type=str, default="solutions"),
         cli.Arg("output_dir",   type=str, default=full_path.get_data_dir()),
-        cli.Arg("min_len",      type=int, default=4),
+        cli.Arg(
+            "print_to_console",
+            action=cli.argparse.BooleanOptionalAction,
+            default=True,
+            help="",
+        ),
         cli.ObjectChoice(
             "word_list",
             cli.ObjectArg(squardle_solver.word_list.WordsAlpha),

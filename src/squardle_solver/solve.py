@@ -49,17 +49,12 @@ def main(
         printer.hline()
 
 def main_cli():
-    parser = cli.ObjectParser(
+    parser = cli.Parser(
         cli.PositionalArg("rows", type=str, nargs="*"),
         cli.Arg("min_len",      type=int, default=4),
         cli.Arg("output_name",  type=str, default="solutions"),
         cli.Arg("output_dir",   type=str, default=full_path.get_data_dir()),
-        cli.Arg(
-            "print_to_console",
-            action=cli.argparse.BooleanOptionalAction,
-            default=True,
-            help="",
-        ),
+        cli.BooleanArg("print_to_console", default=True),
         cli.ObjectChoice(
             "word_list",
             cli.ObjectArg(squardle_solver.word_list.WordsAlpha),

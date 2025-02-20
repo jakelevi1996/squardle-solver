@@ -16,7 +16,7 @@ def main(
     grid = squardle_solver.grid.Grid(rows)
 
     with cli.verbose:
-        word_list = cli.init_object(args, "word_list")
+        word_list = args.init_object("word_list")
         assert isinstance(word_list, squardle_solver.word_list.WordList)
 
     word_tree = squardle_solver.word_tree.WordTreeCache(word_list).load()
